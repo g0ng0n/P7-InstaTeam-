@@ -1,0 +1,11 @@
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+/.gradle/
+/gradle/
+# IntelliJ
+/out/
+/.idea/
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
