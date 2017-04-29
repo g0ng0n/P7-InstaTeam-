@@ -1,9 +1,6 @@
 package com.g0ng0n.instateam.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
@@ -21,6 +18,9 @@ public class Role {
     @NotNull
     @Pattern(regexp = "#[0-9a-fA-F]{6}")
     private String name;
+
+    @OneToMany(mappedBy = "role")
+    private Collaborator collaborator;
 
 
     public Role() {
@@ -40,6 +40,14 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collaborator getCollaborator() {
+        return collaborator;
+    }
+
+    public void setCollaborator(Collaborator collaborator) {
+        this.collaborator = collaborator;
     }
 
     @Override
