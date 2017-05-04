@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="layout :: head('index')"></head>
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: searchbar"></div>
+<div th:replace="layout :: flash"></div>
+<div class="container">
+    <div class="row">
+        <div th:each="project : ${projects}" class="col s12 l4">
+            <a th:href="@{|/projects/${project.name}|}" class="actions">
+
+            </a>
+        </div>
+    </div>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>

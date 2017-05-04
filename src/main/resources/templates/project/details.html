@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head('collaborators')"></head>
+
+<body>
+<div th:replace="layout :: nav"></div>
+<div th:replace="layout :: flash"></div>
+
+<div class="frame row">
+    <div class="col s10 l11 push-l1">
+        <h4 th:text="${project.name}"></h4>
+        <div class="row">
+            <h4 th:text="${project.description}"></h4>
+        </div>
+        <div class="actions">
+            <a th:href="@{|/projects/${project.id}/edit|}">Edit</a>
+            <form th:action="@{|/projects/${project.id}/delete|}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="layout :: scripts"></div>
+</body>
+</html>
