@@ -2,7 +2,6 @@ package com.g0ng0n.instateam.web.controller;
 
 import com.g0ng0n.instateam.model.Collaborator;
 import com.g0ng0n.instateam.model.Project;
-import com.g0ng0n.instateam.model.Role;
 import com.g0ng0n.instateam.service.ProjectService;
 import com.g0ng0n.instateam.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +62,7 @@ public class ProjectController {
 
         }
 
-        // Update Collaborator if valid data was received
+        // Update projects if valid data was received
         projectService.save(project);
 
         redirectAttributes.addFlashAttribute("flash", new FlashMessage("The Project was Successfully Updated", FlashMessage.Status.SUCCESS));

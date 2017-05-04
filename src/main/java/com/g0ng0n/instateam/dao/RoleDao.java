@@ -7,13 +7,6 @@ import java.util.List;
 /**
  * Created by g0ng0n.
  */
-public interface RoleDao {
+public interface RoleDao  extends GenericDao<Role>{
 
-    List<Role> findAll();
-
-    Role findById(Long id);
-
-    void save(Role role);
-
-    void delete(Role role);
 }
